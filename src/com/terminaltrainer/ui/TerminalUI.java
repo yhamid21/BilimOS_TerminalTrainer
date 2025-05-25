@@ -65,6 +65,13 @@ public class TerminalUI {
         frame = new JFrame("Terminal Trainer");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
+        
+        try {
+            ImageIcon icon = new ImageIcon("src/com/terminaltrainer/ui/TerminalIcon.png");
+            frame.setIconImage(icon.getImage());
+        } catch (Exception e) {
+            System.err.println("Failed to load TerminalIcon.png: " + e.getMessage());
+        }
 
         terminal = new JTextPane();
         terminal.setEditable(true);
